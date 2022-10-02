@@ -8,7 +8,6 @@ import (
 	"time"
 
 	"github.com/confluentinc/confluent-kafka-go/kafka"
-	"github.com/razz99/kafka-go/config"
 )
 
 func main() {
@@ -20,7 +19,7 @@ func main() {
 	}
 
 	configFile := os.Args[1]
-	conf := config.ReadConfig(configFile)
+	conf := ReadConfig(configFile)
 	conf["group.id"] = "kafka-go"
 	conf["auto.offset.reset"] = "earliest"
 
